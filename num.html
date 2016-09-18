@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+	<script>
+		var self = {name:'boyi'};
+
+		// bind[self,fn,args];
+		// self: 绑定对象，作为函数的上下文，
+		// fn：被绑定的函数
+		// args：被绑定的参数，可省略
+		
+// 有参数	
+		var f = angular.bind(self,function(age){
+			alert(this.name + ' is ' + age + '!');
+		},'15');
+
+		f();
+// 无参数
+		var m = angular.bind(self,function(age){
+			alert(this.name + ' is ' + age + '!');
+		});//省略参数
+		m(3);//调用传参的函数
+	</script>
+</body>
+</html>

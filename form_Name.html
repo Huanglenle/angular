@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myName">
+		xing: <input type="text" ng-model="firstName">
+		ming: <input type="text" ng-model="lastName">
+
+		姓名:{{ firstName + '' + lastName}};
+	</div>
+	<script>
+		var app = angular.module('myapp',[]);
+		app.controller('myName',function($scope){
+			$scope.firstName = '';
+			$scope.lastName = '';
+		})
+	</script>
+</body>
+</html>
